@@ -7,6 +7,7 @@
 //   email     : (선택) 이메일
 //   interests : (선택) { ko, en } 관심 연구 분야
 //   bio       : (선택) { ko, en } 짧은 소개
+//   education, career : (선택, 지도교수용) [["연도", "내용"], ...] — 영어로만 적습니다.
 //   links     : (선택) { homepage, scholar, github, linkedin } — 있는 것만 적으면 아이콘이 표시됩니다.
 // 석사과정(ms)에 실제 구성원을 추가하면 "합류 예정" 안내 카드는 자동으로 사라집니다.
 // 졸업생은 group 을 "alumni" 로 바꾸고 role 에 졸업 정보(예: "석사 2028 → ○○전자")를 적으면 됩니다.
@@ -31,14 +32,17 @@ window.MEMBERS = [
     role: { ko: "조교수 · 계명대학교 컴퓨터공학과", en: "Assistant Professor · Dept. of Computer Engineering, Keimyung University" },
     email: "yhlee@kmu.ac.kr",
     photo: "assets/img/members/placeholder.svg",
-    interests: {
-      ko: "인공지능, 기계학습, 데이터 공학, 그래프 데이터 마이닝, 정량적 CT(QCT) 기반 AI 폐 분석, 추천 시스템",
-      en: "Artificial Intelligence, Machine Learning, Data Engineering, Graph Data Mining, QCT-based AI Lung Analysis, Recommender Systems"
-    },
-    bio: {
-      ko: "계명대학교 컴퓨터공학과 조교수로 인공지능 및 데이터 공학 연구실(AIDEL)을 이끌고 있습니다. 대규모 데이터를 효율적으로 다루는 데이터 공학 기술과 그래프 신경망을 비롯한 기계학습 방법론을 연구하며, 이를 정량적 CT 영상 기반 폐 기능 분석, 금융·행정 데이터 예측, 추천 시스템 등 실제 문제에 적용하고 있습니다.",
-      en: "Yonghyun Lee is an Assistant Professor in the Department of Computer Engineering at Keimyung University, where he leads the Artificial Intelligence and Data Engineering Lab (AIDEL). His research spans data engineering for large-scale data and machine learning methods such as graph neural networks, with applications to quantitative CT-based lung function analysis, financial and administrative prediction, and recommender systems."
-    },
+    // 학력·경력은 한/영 화면 모두 영어로 표시합니다. [연도, 내용] 형태이며 최신 순으로 적습니다.
+    education: [
+      ["2025", "Ph.D. in Computer Science and Engineering (Integrated M.S.–Ph.D.), Seoul National University"],
+      ["2015", "B.S. in Computer Engineering, Sungkyunkwan University"]
+    ],
+    career: [
+      ["2026–Present", "Assistant Professor, Dept. of Computer Engineering, Keimyung University"],
+      ["2026", "Research Professor, Medical Research Center, Seoul National University"],
+      ["2025", "Researcher, Biomedical Research Institute, Jeonbuk National University Hospital"],
+      ["2021–2025", "Visiting Researcher, Biomedical Research Institute, Seoul National University Hospital"]
+    ],
     links: {
       scholar: "https://scholar.google.com/citations?user=bUV0eBcAAAAJ"
     }

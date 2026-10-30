@@ -37,9 +37,17 @@
       'onerror="this.onerror=null;this.src=\'' + PLACEHOLDER + '\'">';
   }
 
+  // Education / Career lists are English-only, so their labels stay English in both languages.
+  function timeline(label, rows) {
+    if (!rows || !rows.length) return "";
+    return '<div class="pi-tl"><span class="pi-label">' + label + '</span><ul>' +
+      rows.map(function (r) { return '<li><span class="pi-yr">' + esc(r[0]) + '</span><span>' + esc(r[1]) + '</span></li>'; }).join("") +
+    '</ul></div>';
+  }
+
   function piCard(m) {
-    var interests = A.t(m.interests);
     var alt = m.name && m.name[A.lang === "ko" ? "en" : "ko"];
+    var history = timeline("Education", m.education) + timeline("Career", m.career);
     return '<article class="card pi-card reveal">' +
       photo(m, "pi-photo") +
       '<div class="pi-info">' +
@@ -47,10 +55,9 @@
           (alt ? ' <span class="pi-name-sub">' + esc(alt) + '</span>' : "") + '</h3>' +
         '<div class="pi-role">' + esc(A.t(m.role)) + '</div>' +
         (m.bio ? '<p class="pi-bio">' + esc(A.t(m.bio)) + '</p>' : "") +
-        (interests ? '<div class="pi-interests"><span class="pi-label">' + (A.lang === "ko" ? "연구 분야" : "Research Interests") + '</span>' +
-          '<div class="pi-tags">' + interests.split(/\s*,\s*/).map(function (s) { return '<span class="tag">' + esc(s) + '</span>'; }).join("") + '</div></div>' : "") +
         linkIcons(m) +
       '</div>' +
+      (history ? '<div class="pi-history">' + history + '</div>' : "") +
     '</article>';
   }
 
