@@ -47,15 +47,19 @@
 
   function piCard(m) {
     var alt = m.name && m.name[A.lang === "ko" ? "en" : "ko"];
-    var history = timeline("Education", m.education) + timeline("Career", m.career);
+    var role = A.t(m.role);
+    var roleHtml = (Array.isArray(role) ? role : [role]).map(function (r) { return '<span>' + esc(r) + '</span>'; }).join("");
+    var history = timeline("Career", m.career) + timeline("Education", m.education);
     return '<article class="card pi-card reveal">' +
-      photo(m, "pi-photo") +
-      '<div class="pi-info">' +
-        '<h3 class="pi-name">' + esc(A.t(m.name)) +
-          (alt ? ' <span class="pi-name-sub">' + esc(alt) + '</span>' : "") + '</h3>' +
-        '<div class="pi-role">' + esc(A.t(m.role)) + '</div>' +
-        (m.bio ? '<p class="pi-bio">' + esc(A.t(m.bio)) + '</p>' : "") +
-        linkIcons(m) +
+      '<div class="pi-profile">' +
+        photo(m, "pi-photo") +
+        '<div class="pi-info">' +
+          '<h3 class="pi-name">' + esc(A.t(m.name)) +
+            (alt ? '<span class="pi-name-sub">' + esc(alt) + '</span>' : "") + '</h3>' +
+          '<div class="pi-role">' + roleHtml + '</div>' +
+          (m.bio ? '<p class="pi-bio">' + esc(A.t(m.bio)) + '</p>' : "") +
+          linkIcons(m) +
+        '</div>' +
       '</div>' +
       (history ? '<div class="pi-history">' + history + '</div>' : "") +
     '</article>';

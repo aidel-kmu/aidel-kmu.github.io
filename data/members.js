@@ -7,7 +7,7 @@
 //   email     : (선택) 이메일
 //   interests : (선택) { ko, en } 관심 연구 분야
 //   bio       : (선택) { ko, en } 짧은 소개
-//   education, career : (선택, 지도교수용) [["연도", "내용"], ...] — 영어로만 적습니다.
+//   career, education : (선택, 지도교수용) [["연도", "내용"], ...] — 영어로만 적습니다.
 //   links     : (선택) { homepage, scholar, github, linkedin } — 있는 것만 적으면 아이콘이 표시됩니다.
 // 석사과정(ms)에 실제 구성원을 추가하면 "합류 예정" 안내 카드는 자동으로 사라집니다.
 // 졸업생은 group 을 "alumni" 로 바꾸고 role 에 졸업 정보(예: "석사 2028 → ○○전자")를 적으면 됩니다.
@@ -29,19 +29,23 @@ window.MEMBERS = [
   {
     group: "pi",
     name: { ko: "이용현", en: "Yonghyun Lee" },
-    role: { ko: "조교수 · 계명대학교 컴퓨터공학과", en: "Assistant Professor · Dept. of Computer Engineering, Keimyung University" },
+    // 지도교수 카드는 사진 아래 좁은 칸에 표시되므로, 배열의 각 항목이 한 줄로 나옵니다.
+    role: {
+      ko: ["조교수", "계명대학교 컴퓨터공학과"],
+      en: ["Assistant Professor", "Dept. of Computer Engineering,", "Keimyung University"]
+    },
     email: "yhlee@kmu.ac.kr",
     photo: "assets/img/members/placeholder.svg",
-    // 학력·경력은 한/영 화면 모두 영어로 표시합니다. [연도, 내용] 형태이며 최신 순으로 적습니다.
-    education: [
-      ["2025", "Ph.D. in Computer Science and Engineering (Integrated M.S.–Ph.D.), Seoul National University"],
-      ["2015", "B.S. in Computer Engineering, Sungkyunkwan University"]
-    ],
+    // 경력·학력은 한/영 화면 모두 영어로 표시합니다. [연도, 내용] 형태이며 최신 순으로 적습니다.
     career: [
       ["2026–Present", "Assistant Professor, Dept. of Computer Engineering, Keimyung University"],
       ["2026", "Research Professor, Medical Research Center, Seoul National University"],
       ["2025", "Researcher, Biomedical Research Institute, Jeonbuk National University Hospital"],
       ["2021–2025", "Visiting Researcher, Biomedical Research Institute, Seoul National University Hospital"]
+    ],
+    education: [
+      ["2025", "Ph.D. in Computer Science and Engineering (Integrated M.S.–Ph.D.), Seoul National University"],
+      ["2015", "B.S. in Computer Engineering, Sungkyunkwan University"]
     ],
     links: {
       scholar: "https://scholar.google.com/citations?user=bUV0eBcAAAAJ"
