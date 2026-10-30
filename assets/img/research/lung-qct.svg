@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Stylized lung CT slice illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f8fb"/>
+      <stop offset="1" stop-color="#e6f0fc"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#12326b" stroke-opacity=".06"/>
+    </pattern>
+    <clipPath id="lungs">
+      <path d="M225 100C182 88 124 108 104 162C90 206 98 258 132 278C162 292 200 280 214 256C224 230 221 182 225 140Z"/>
+      <path d="M255 100C298 88 356 108 376 162C390 206 382 258 348 278C318 292 280 280 266 256C256 230 259 182 255 140Z"/>
+    </clipPath>
+    <radialGradient id="hot"><stop offset="0" stop-color="#2f7de1" stop-opacity=".75"/><stop offset="1" stop-color="#2f7de1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="deep"><stop offset="0" stop-color="#12326b" stop-opacity=".55"/><stop offset="1" stop-color="#12326b" stop-opacity="0"/></radialGradient>
+    <linearGradient id="scale" x1="0" x2="1">
+      <stop offset="0" stop-color="#dbe7f8"/>
+      <stop offset=".5" stop-color="#2f7de1"/>
+      <stop offset="1" stop-color="#12326b"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" x2="1">
+      <stop offset="0" stop-color="#2f7de1" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#2f7de1" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#2f7de1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" rx="20" fill="url(#bg)"/>
+  <rect width="480" height="360" rx="20" fill="url(#grid)"/>
+
+  <!-- body cross-section -->
+  <ellipse cx="240" cy="190" rx="182" ry="132" fill="#fff" stroke="#c9d6ea" stroke-width="2"/>
+  <ellipse cx="240" cy="190" rx="168" ry="119" fill="none" stroke="#e3e8f0" stroke-width="1.5"/>
+  <!-- spine & sternum -->
+  <circle cx="240" cy="292" r="17" fill="#eef2f8" stroke="#c9d6ea" stroke-width="2"/>
+  <circle cx="240" cy="292" r="7" fill="#fff" stroke="#c9d6ea"/>
+  <rect x="230" y="66" width="20" height="12" rx="5" fill="#eef2f8" stroke="#c9d6ea"/>
+
+  <!-- lungs + regional function map -->
+  <g clip-path="url(#lungs)">
+    <rect width="480" height="360" fill="#dbe7f8"/>
+    <circle cx="140" cy="250" r="70" fill="url(#hot)"/>
+    <circle cx="180" cy="150" r="55" fill="url(#deep)"/>
+    <circle cx="350" cy="235" r="60" fill="url(#hot)"/>
+    <circle cx="330" cy="140" r="45" fill="url(#hot)" opacity=".6"/>
+    <circle cx="300" cy="210" r="40" fill="url(#deep)"/>
+    <g fill="#fff" opacity=".85">
+      <circle cx="160" cy="130" r="5"/><circle cx="172" cy="142" r="3"/><circle cx="150" cy="148" r="2.5"/>
+      <circle cx="342" cy="128" r="4"/><circle cx="352" cy="140" r="2.5"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#12326b" stroke-width="2" opacity=".55">
+    <path d="M225 100C182 88 124 108 104 162C90 206 98 258 132 278C162 292 200 280 214 256C224 230 221 182 225 140Z"/>
+    <path d="M255 100C298 88 356 108 376 162C390 206 382 258 348 278C318 292 280 280 266 256C256 230 259 182 255 140Z"/>
+  </g>
+
+  <!-- airway tree -->
+  <g fill="none" stroke="#12326b" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M240 84V140" stroke-width="7"/>
+    <path d="M240 140L212 168M240 140L268 168" stroke-width="5"/>
+    <path d="M212 168L182 186M212 168L204 210M268 168L298 186M268 168L276 210" stroke-width="3.2"/>
+    <path d="M182 186L156 182M182 186L166 212M204 210L188 240M204 210L210 246M298 186L324 182M298 186L314 212M276 210L292 240M276 210L270 246" stroke-width="2" opacity=".8"/>
+  </g>
+  <circle cx="240" cy="96" r="5" fill="#fff" stroke="#12326b" stroke-width="2"/>
+
+  <!-- scan line & region of interest -->
+  <rect x="58" y="214" width="364" height="2.5" fill="url(#scan)"/>
+  <g stroke="#2f7de1" stroke-width="2" fill="none">
+    <path d="M318 214h-8v-8M318 262h-8v8M378 214h8v-8M378 262h8v8"/>
+  </g>
+  <path d="M386 206L404 190" stroke="#2f7de1" stroke-width="1.5"/>
+  <g transform="translate(392 166)">
+    <rect width="72" height="26" rx="13" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="14" cy="13" r="4" fill="#2f7de1"/>
+    <rect x="24" y="10" width="36" height="6" rx="3" fill="#12326b" opacity=".3"/>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(36 28)">
+    <rect width="128" height="34" rx="10" fill="#fff" stroke="#e3e8f0"/>
+    <rect x="12" y="13" width="104" height="8" rx="4" fill="url(#scale)"/>
+  </g>
+</svg>

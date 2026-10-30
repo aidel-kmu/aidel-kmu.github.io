@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications · AIDEL</title>
+  <meta name="description" content="Publications of AIDEL (Artificial Intelligence and Data Engineering Lab), Keimyung University.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/publications.css">
+</head>
+<body data-page="publications">
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Publications</h1>
+      </div>
+    </section>
+
+    <div class="page-body">
+      <div class="container">
+        <div class="pub-toolbar">
+          <div class="pub-filters" id="pub-filters" role="group" aria-label="Publication type"></div>
+          <div class="pub-search-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="search" class="pub-search" id="pub-search" aria-label="Search publications" autocomplete="off">
+          </div>
+        </div>
+        <p class="pub-status" id="pub-status" aria-live="polite"></p>
+        <div id="pub-list"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="data/site.js"></script>
+  <script src="data/publications.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/publications.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Multi-agent collaboration illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6f8fb"/><stop offset="1" stop-color="#e6f0fc"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#2f7de1" stop-opacity=".35"/><stop offset="1" stop-color="#2f7de1" stop-opacity="0"/></radialGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1 1l8 4-8 4" fill="none" stroke="#2f7de1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="480" height="360" rx="20" fill="url(#bg)"/>
+
+  <!-- links: orchestrator <-> agents -->
+  <g stroke="#2f7de1" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M206 160L132 112" marker-end="url(#arr)" marker-start="url(#arr)"/>
+    <path d="M274 160L348 112" marker-end="url(#arr)" marker-start="url(#arr)"/>
+    <path d="M206 200L132 248" marker-end="url(#arr)" marker-start="url(#arr)"/>
+    <path d="M274 200L348 248" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  </g>
+  <!-- peer links between agents -->
+  <g stroke="#12326b" stroke-opacity=".25" stroke-width="1.5" stroke-dasharray="4 5" fill="none">
+    <path d="M150 96H330"/>
+    <path d="M150 264H330"/>
+    <path d="M104 126V234"/>
+    <path d="M376 126V234"/>
+  </g>
+
+  <!-- orchestrator -->
+  <circle cx="240" cy="180" r="74" fill="url(#glow)"/>
+  <rect x="196" y="140" width="88" height="80" rx="18" fill="#12326b"/>
+  <rect x="214" y="160" width="52" height="30" rx="9" fill="#fff" fill-opacity=".14"/>
+  <circle cx="230" cy="175" r="5" fill="#fff"/>
+  <circle cx="250" cy="175" r="5" fill="#fff"/>
+  <path d="M240 140v-10" stroke="#12326b" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="240" cy="127" r="5" fill="#2f7de1"/>
+  <rect x="220" y="200" width="40" height="5" rx="2.5" fill="#fff" fill-opacity=".5"/>
+
+  <!-- agent: planner (top-left) -->
+  <g transform="translate(70 66)">
+    <rect width="80" height="60" rx="14" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="22" cy="24" r="9" fill="#2f7de1" fill-opacity=".9"/>
+    <rect x="38" y="18" width="30" height="5" rx="2.5" fill="#12326b" fill-opacity=".45"/>
+    <rect x="38" y="27" width="22" height="5" rx="2.5" fill="#12326b" fill-opacity=".25"/>
+    <path d="M14 44h12M14 50h20" stroke="#12326b" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+    <path d="M44 46l4 4 8-8" fill="none" stroke="#2f7de1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- agent: tool user (top-right) -->
+  <g transform="translate(330 66)">
+    <rect width="80" height="60" rx="14" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="22" cy="24" r="9" fill="#12326b" fill-opacity=".8"/>
+    <rect x="38" y="18" width="30" height="5" rx="2.5" fill="#12326b" fill-opacity=".45"/>
+    <rect x="38" y="27" width="22" height="5" rx="2.5" fill="#12326b" fill-opacity=".25"/>
+    <path d="M16 50l7-7m0 0a6 6 0 1 0 4-4" fill="none" stroke="#2f7de1" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M42 44l-5 4 5 4M58 44l5 4-5 4" fill="none" stroke="#12326b" stroke-opacity=".5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- agent: analyst (bottom-left) -->
+  <g transform="translate(70 234)">
+    <rect width="80" height="60" rx="14" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="22" cy="24" r="9" fill="#12326b" fill-opacity=".8"/>
+    <rect x="38" y="18" width="30" height="5" rx="2.5" fill="#12326b" fill-opacity=".45"/>
+    <rect x="38" y="27" width="22" height="5" rx="2.5" fill="#12326b" fill-opacity=".25"/>
+    <rect x="14" y="44" width="7" height="8" rx="1.5" fill="#12326b" fill-opacity=".35"/>
+    <rect x="25" y="40" width="7" height="12" rx="1.5" fill="#12326b" fill-opacity=".5"/>
+    <rect x="36" y="36" width="7" height="16" rx="1.5" fill="#2f7de1"/>
+    <rect x="47" y="42" width="7" height="10" rx="1.5" fill="#12326b" fill-opacity=".35"/>
+  </g>
+
+  <!-- agent: verifier (bottom-right) -->
+  <g transform="translate(330 234)">
+    <rect width="80" height="60" rx="14" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="22" cy="24" r="9" fill="#2f7de1" fill-opacity=".9"/>
+    <rect x="38" y="18" width="30" height="5" rx="2.5" fill="#12326b" fill-opacity=".45"/>
+    <rect x="38" y="27" width="22" height="5" rx="2.5" fill="#12326b" fill-opacity=".25"/>
+    <path d="M24 38l10 4v5c0 5-4 8-10 10-6-2-10-5-10-10v-5z" fill="#e6f0fc" stroke="#2f7de1" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M20 47l3 3 6-6" fill="none" stroke="#2f7de1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="42" y="42" width="24" height="5" rx="2.5" fill="#12326b" fill-opacity=".3"/>
+  </g>
+
+  <!-- message bubbles -->
+  <g transform="translate(150 132)">
+    <rect width="34" height="18" rx="9" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="11" cy="9" r="2" fill="#2f7de1"/><circle cx="17" cy="9" r="2" fill="#2f7de1" fill-opacity=".6"/><circle cx="23" cy="9" r="2" fill="#2f7de1" fill-opacity=".3"/>
+  </g>
+  <g transform="translate(296 210)">
+    <rect width="34" height="18" rx="9" fill="#fff" stroke="#e3e8f0"/>
+    <circle cx="11" cy="9" r="2" fill="#12326b" fill-opacity=".6"/><circle cx="17" cy="9" r="2" fill="#12326b" fill-opacity=".4"/><circle cx="23" cy="9" r="2" fill="#12326b" fill-opacity=".25"/>
+  </g>
+</svg>
