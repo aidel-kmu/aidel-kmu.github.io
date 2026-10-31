@@ -15,7 +15,7 @@
 //   links: { paper: "https://...", code: "https://github.com/..." } },
 window.PUBLICATIONS = [
   {
-    title: "Strategic Default Detection Leveraging Card Spending: Static-Feature Ensemble and Cluster-Augmented Signals for Non Time-Series Modeling.",
+    title: "Strategic Default Detection Leveraging Card Spending: Static-Feature Ensemble and Cluster-Augmented Signals for Non Time-Series Modeling",
     authors: ["Yonghyun Lee", "Jaehyuk Lee", "Eunchan Kim"],
     venue: "KSII Transactions on Internet and Information Systems, 20(1), 134",
     year: 2026,
@@ -64,7 +64,7 @@ window.PUBLICATIONS = [
     links: { paper: "https://academic.oup.com/ajrccm/article-abstract/211/Supplement_1/A3370/8332985", doi: "10.1164/ajrccm.2025.211.Abstracts.A3370" }
   },
   {
-    title: "Deep Learning-based Delinquent Taxpayer Prediction: A Scientific Administrative Approach.",
+    title: "Deep Learning-based Delinquent Taxpayer Prediction: A Scientific Administrative Approach",
     authors: ["Yonghyun Lee", "Eunchan Kim"],
     venue: "KSII Transactions on Internet and Information Systems, 18(1), 30",
     year: 2024,
@@ -88,8 +88,9 @@ window.PUBLICATIONS = [
     links: { doi: "10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
   },
   {
-    title: "Machine Learning-based Prediction of Relative Regional Air Volume Change from Healthy Human Lung CTs.",
+    title: "Machine Learning-based Prediction of Relative Regional Air Volume Change from Healthy Human Lung CTs",
     authors: ["Eunchan Kim", "Yonghyun Lee", "Jiwoong Choi", "Byungjoon Yoo", "KumJu Chae", "Changhyun Lee"],
+    equal: [0, 1],
     venue: "KSII Transactions on Internet and Information Systems, 17(2), 576",
     year: 2023,
     type: "intl-journal",
