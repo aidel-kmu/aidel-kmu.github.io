@@ -58,7 +58,7 @@
       '<a class="skip-link" href="#main" data-i18n="skip"></a>' +
       '<div class="container">' +
         '<a class="brand" href="index.html">' +
-          '<span class="brand-mark">AI</span>' +
+          '<img class="brand-mark" src="assets/img/logo/mark.svg" alt="" width="36" height="36">' +
           '<span class="brand-text"><span class="brand-name">' + escapeHtml(site.shortName || "AIDEL") + '</span>' +
           '<span class="brand-sub" data-site="affiliation"></span></span>' +
         '</a>' +
