@@ -29,12 +29,12 @@ window.PUBLICATIONS = [
     venue: "The Journal of Supercomputing, 82(5), 316",
     year: 2026,
     type: "intl-journal",
-    links: { paper: "https://link.springer.com/article/10.1007/s11227-026-08486-6", doi: "10.1007/s11227-026-08486-6" }
+    links: { doi: "10.1007/s11227-026-08486-6" }
   },
   {
     title: "CT Digital Twin Lung-based Regional Functional Defects Explain Airflow Obstruction in COPD",
     authors: ["Yonghyun Lee", "Jiwoong Choi", "Asma Abdolijomoor", "Mario Castro", "ChangHoon Lee", "SoRi Kim", "Youngchan Jang", "Eunchan Kim", "KumJu Chae", "Changhyun Lee"],
-    venue: "American Thoracic Society (ATS) 2026 International Conference, B78 (P1295) — Am J Respir Crit Care Med 212 (Supplement_2)",
+    venue: "American Thoracic Society (ATS) 2026 International Conference — Am J Respir Crit Care Med 212",
     year: 2026,
     type: "intl-conf",
     links: { doi: "10.1093/ajrccm/aamag286.134" }
@@ -45,23 +45,23 @@ window.PUBLICATIONS = [
     venue: "arXiv preprint arXiv:2604.27025",
     year: 2026,
     type: "preprint",
-    links: { paper: "https://arxiv.org/abs/2604.27025" }
+    links: { doi: "10.48550/arXiv.2604.27025" }
   },
   {
     title: "Primary Determinants and Strategic Implications for Customer Loyalty in Pet-Related Vertical E-Commerce: A Machine Learning Approach",
     authors: ["Yonghyun Lee", "Kwangtek Na", "Jungwook Rhim", "Eunchan Kim"],
-    venue: "Systems (MDPI), 13(3), 175",
+    venue: "Systems, 13(3), 175",
     year: 2025,
     type: "intl-journal",
-    links: { paper: "https://www.mdpi.com/2079-8954/13/3/175", doi: "10.3390/systems13030175" }
+    links: { doi: "10.3390/systems13030175" }
   },
   {
-    title: "Quantitative CT and Machine Learning-derived Hyper-and Hypo-Functional Regions Associate Heterogeneous Ventilation and Reduced Deformation With PFT and Smoking in COPD",
+    title: "Quantitative CT and Machine Learning-derived Hyper- and Hypo- Functional Regions Associate Heterogeneous Ventilation and Reduced Deformation With PFT and Smoking in COPD",
     authors: ["Yonghyun Lee", "Jiwoong Choi", "Eunchan Kim", "KumJu Chae", "SoRi Kim", "Changhyun Lee"],
-    venue: "American Thoracic Society (ATS) 2025 International Conference — Am J Respir Crit Care Med 211 (Supplement_1), A3370",
+    venue: "American Thoracic Society (ATS) 2025 International Conference — Am J Respir Crit Care Med 211, A3370",
     year: 2025,
     type: "intl-conf",
-    links: { paper: "https://academic.oup.com/ajrccm/article-abstract/211/Supplement_1/A3370/8332985", doi: "10.1164/ajrccm.2025.211.Abstracts.A3370" }
+    links: { doi: "10.1164/ajrccm.2025.211.Abstracts.A3370" }
   },
   {
     title: "Deep Learning-based Delinquent Taxpayer Prediction: A Scientific Administrative Approach",
@@ -77,12 +77,12 @@ window.PUBLICATIONS = [
     venue: "Machine Learning: Science and Technology, 5(4), 045072",
     year: 2024,
     type: "intl-journal",
-    links: { paper: "https://iopscience.iop.org/article/10.1088/2632-2153/ad979b", doi: "10.1088/2632-2153/ad979b" }
+    links: { doi: "10.1088/2632-2153/ad979b" }
   },
   {
-    title: "Quantitative CT Imaging and Machine Learning-based Normal Reference Prediction Evaluate Acinar-scale Hyper-and Hypo-functioning in COPD",
+    title: "Quantitative CT Imaging and Machine Learning-based Normal Reference Prediction Evaluate Acinar-scale Hyper- and Hypo-functioning in COPD",
     authors: ["Yonghyun Lee", "Eunchan Kim", "KumJu Chae", "Changhyun Lee", "GongYong Jin", "SoRi Kim", "Jiwoong Choi"],
-    venue: "American Thoracic Society (ATS) 2024 International Conference — Am J Respir Crit Care Med 209 (Supplement_1), A1243",
+    venue: "American Thoracic Society (ATS) 2024 International Conference — Am J Respir Crit Care Med 209, A1243",
     year: 2024,
     type: "intl-conf",
     links: { doi: "10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
@@ -97,20 +97,20 @@ window.PUBLICATIONS = [
     links: { doi: "10.3837/tiis.2023.02.016" }
   },
   {
-    title: "Machine learning predicts computed tomography (CT)-based normal regional lung function distribution in asthma and chronic obstructive pulmonary disease (COPD)",
+    title: "ALBERT with Knowledge Graph Encoder Utilizing Semantic Similarity for Commonsense Question Answering",
+    authors: ["Byeongmin Choi", "Yonghyun Lee", "Yeunwoong Kyung", "Eunchan Kim"],
+    venue: "Intelligent Automation & Soft Computing, 36(1), 71",
+    year: 2023,
+    type: "intl-journal",
+    links: { doi: "10.32604/iasc.2023.032783" }
+  },
+  {
+    title: "Machine Learning Predicts Computed Tomography (CT)-based Normal Regional Lung Function Distribution in Asthma and Chronic Obstructive Pulmonary Disease (COPD)",
     authors: ["Yonghyun Lee", "Eunchan Kim", "KumJu Chae", "Changhyun Lee", "GongYong Jin", "SoRi Kim", "Jiwoong Choi"],
-    venue: "American Thoracic Society (ATS) 2023 International Conference, B68. A Different Point of View: Lung Imaging in COPD, A4004",
+    venue: "American Thoracic Society (ATS) 2023 International Conference — Am J Respir Crit Care Med 207, A4004",
     year: 2023,
     type: "intl-conf",
     links: { doi: "10.1164/ajrccm-conference.2023.207.1_MeetingAbstracts.A4004" }
-  },
-  {
-    title: "Albert with knowledge graph encoder utilizing semantic similarity for commonsense question answering",
-    authors: ["Byeongmin Choi", "Yonghyun Lee", "Yeunwoong Kyung", "Eunchan Kim"],
-    venue: "Intelligent Automation & Soft Computing, 36(1), 71-82",
-    year: 2022,
-    type: "intl-journal",
-    links: { paper: "https://arxiv.org/abs/2211.07065", doi: "10.32604/iasc.2023.032783" }
   },
   {
     title: "Machine Learning-based Prediction of Relative Regional Air Volume Change",
@@ -122,17 +122,17 @@ window.PUBLICATIONS = [
   {
     title: "음악 유사도 비교를 위한 Siamese 네트워크 기반 그래프 임베딩의 개선",
     authors: ["송창헌", "이용현", "김형주"],
-    venue: "정보과학회 컴퓨팅의 실제 논문지, 26(11), 493-498",
+    venue: "정보과학회 컴퓨팅의 실제 논문지, 26(11), 493",
     year: 2020,
     type: "dom-journal",
-    links: { paper: "https://bda.snu.ac.kr/images/2/27/%EC%86%A1%EC%B0%BD%ED%97%8C_%EC%9D%8C%EC%95%85_%EC%9C%A0%EC%82%AC%EB%8F%84_%EB%B9%84%EA%B5%90%EB%A5%BC_%EC%9C%84%ED%95%9C_Siamese_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC_%EA%B8%B0%EB%B0%98_%EA%B7%B8%EB%9E%98%ED%94%84_%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98_%EA%B0%9C%EC%84%A0.pdf" }
+    links: { doi: "10.5626/KTCP.2020.26.11.493" }
   },
   {
     title: "관계형 데이터베이스 상에서 사용하는 최단 경로 탐색 알고리즘 (ALT) 설계와 구현",
     authors: ["이용현", "임동혁", "구해모", "김형주"],
-    venue: "정보과학회 컴퓨팅의 실제 논문지, 25(4), 215-222",
+    venue: "정보과학회 컴퓨팅의 실제 논문지, 25(4), 215",
     year: 2019,
     type: "dom-journal",
-    links: { paper: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE08000228" }
+    links: { doi: "10.5626/KTCP.2019.25.4.215" }
   }
 ];
