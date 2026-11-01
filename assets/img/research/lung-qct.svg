@@ -1,82 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Stylized lung CT slice illustration">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="The patient's quantitative CT lung minus a machine-learning predicted healthy twin lung gives a CT map of local hyper- and hypo-functioning regions">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#f6f8fb"/>
       <stop offset="1" stop-color="#e6f0fc"/>
     </linearGradient>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V24" fill="none" stroke="#12326b" stroke-opacity=".06"/>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#12326b" opacity=".07"/>
     </pattern>
-    <clipPath id="lungs">
-      <path d="M225 100C182 88 124 108 104 162C90 206 98 258 132 278C162 292 200 280 214 256C224 230 221 182 225 140Z"/>
-      <path d="M255 100C298 88 356 108 376 162C390 206 382 258 348 278C318 292 280 280 266 256C256 230 259 182 255 140Z"/>
-    </clipPath>
-    <radialGradient id="hot"><stop offset="0" stop-color="#2f7de1" stop-opacity=".75"/><stop offset="1" stop-color="#2f7de1" stop-opacity="0"/></radialGradient>
-    <radialGradient id="deep"><stop offset="0" stop-color="#12326b" stop-opacity=".55"/><stop offset="1" stop-color="#12326b" stop-opacity="0"/></radialGradient>
-    <linearGradient id="scale" x1="0" x2="1">
-      <stop offset="0" stop-color="#dbe7f8"/>
-      <stop offset=".5" stop-color="#2f7de1"/>
-      <stop offset="1" stop-color="#12326b"/>
-    </linearGradient>
-    <linearGradient id="scan" x1="0" x2="1">
-      <stop offset="0" stop-color="#2f7de1" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#2f7de1" stop-opacity=".9"/>
-      <stop offset="1" stop-color="#2f7de1" stop-opacity="0"/>
-    </linearGradient>
+    <path id="lobeL" d="M72 20C50 14 20 30 12 66C6 100 12 132 34 140C52 146 68 138 72 122C76 100 74 60 72 34Z"/>
+    <path id="lobeR" d="M88 20C110 14 140 30 148 66C154 100 148 132 126 140C112 145 100 140 96 132C104 124 104 108 94 100C87 82 86 60 88 34Z"/>
+    <clipPath id="lungClip"><use href="#lobeL"/><use href="#lobeR"/></clipPath>
+    <clipPath id="winClip"><rect x="-8" y="-8" width="176" height="160" rx="12"/></clipPath>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.3"/></filter>
+    <filter id="haze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+    <radialGradient id="hyper"><stop offset="0" stop-color="#8cc0ff"/><stop offset=".55" stop-color="#3d8cf0"/><stop offset="1" stop-color="#2f7de1"/></radialGradient>
+    <!-- coronal CT slice: navy window, soft-tissue body, dark lung fields, sparse vessel tree -->
+    <g id="ctBase">
+      <rect x="-8" y="-8" width="176" height="160" rx="12" fill="#13284d"/>
+      <g clip-path="url(#winClip)">
+        <path d="M-10 160C-14 104 -10 50 8 22C22 2 54 -6 80 -6C106 -6 138 2 152 22C170 50 174 104 170 160Z" fill="#3d5d92"/>
+      </g>
+      <use href="#lobeL" fill="#142c57"/>
+      <use href="#lobeR" fill="#142c57"/>
+      <g clip-path="url(#lungClip)" fill="none" stroke="#8aa6d8" stroke-width="1.3" stroke-linecap="round" opacity=".45">
+        <path d="M70 60C56 52 44 42 34 30M70 68C54 72 40 80 26 92M70 76C62 92 52 110 44 128"/>
+        <path d="M90 60C104 52 116 42 126 30M90 68C106 72 120 80 134 92M92 78C100 92 108 106 114 120"/>
+      </g>
+      <path d="M80 -6V28M80 28L70 40M80 28L90 40" fill="none" stroke="#142c57" stroke-width="5" stroke-linecap="round"/>
+    </g>
   </defs>
   <rect width="480" height="360" rx="20" fill="url(#bg)"/>
-  <rect width="480" height="360" rx="20" fill="url(#grid)"/>
+  <rect width="480" height="360" rx="20" fill="url(#dots)"/>
+  <g transform="translate(-6 0)">
 
-  <!-- body cross-section -->
-  <ellipse cx="240" cy="190" rx="182" ry="132" fill="#fff" stroke="#c9d6ea" stroke-width="2"/>
-  <ellipse cx="240" cy="190" rx="168" ry="119" fill="none" stroke="#e3e8f0" stroke-width="1.5"/>
-  <!-- spine & sternum -->
-  <circle cx="240" cy="292" r="17" fill="#eef2f8" stroke="#c9d6ea" stroke-width="2"/>
-  <circle cx="240" cy="292" r="7" fill="#fff" stroke="#c9d6ea"/>
-  <rect x="230" y="66" width="20" height="12" rx="5" fill="#eef2f8" stroke="#c9d6ea"/>
+  <rect x="30" y="22" width="152" height="316" rx="14" fill="#fff" fill-opacity=".7" stroke="#e3e8f0"/>
 
-  <!-- lungs + regional function map -->
-  <g clip-path="url(#lungs)">
-    <rect width="480" height="360" fill="#dbe7f8"/>
-    <circle cx="140" cy="250" r="70" fill="url(#hot)"/>
-    <circle cx="180" cy="150" r="55" fill="url(#deep)"/>
-    <circle cx="350" cy="235" r="60" fill="url(#hot)"/>
-    <circle cx="330" cy="140" r="45" fill="url(#hot)" opacity=".6"/>
-    <circle cx="300" cy="210" r="40" fill="url(#deep)"/>
-    <g fill="#fff" opacity=".85">
-      <circle cx="160" cy="130" r="5"/><circle cx="172" cy="142" r="3"/><circle cx="150" cy="148" r="2.5"/>
-      <circle cx="342" cy="128" r="4"/><circle cx="352" cy="140" r="2.5"/>
+  <!-- patient QCT (top): mottled; low-density pockets (dark) and denser areas (light) -->
+  <g transform="translate(48 40) scale(.72)">
+    <use href="#ctBase"/>
+    <g clip-path="url(#lungClip)">
+      <g filter="url(#haze)">
+        <ellipse cx="36" cy="50" rx="16" ry="12" fill="#050d1e"/>
+        <ellipse cx="122" cy="106" rx="12" ry="15" fill="#050d1e"/>
+        <ellipse cx="36" cy="110" rx="17" ry="12" fill="#7d9cd2" opacity=".75"/>
+        <ellipse cx="120" cy="50" rx="13" ry="12" fill="#7d9cd2" opacity=".75"/>
+      </g>
+    </g>
+    <g fill="none" stroke="#dbe7f8" stroke-width="2" opacity=".9">
+      <use href="#lobeL"/><use href="#lobeR"/>
     </g>
   </g>
-  <g fill="none" stroke="#12326b" stroke-width="2" opacity=".55">
-    <path d="M225 100C182 88 124 108 104 162C90 206 98 258 132 278C162 292 200 280 214 256C224 230 221 182 225 140Z"/>
-    <path d="M255 100C298 88 356 108 376 162C390 206 382 258 348 278C318 292 280 280 266 256C256 230 259 182 255 140Z"/>
-  </g>
 
-  <!-- airway tree -->
-  <g fill="none" stroke="#12326b" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M240 84V140" stroke-width="7"/>
-    <path d="M240 140L212 168M240 140L268 168" stroke-width="5"/>
-    <path d="M212 168L182 186M212 168L204 210M268 168L298 186M268 168L276 210" stroke-width="3.2"/>
-    <path d="M182 186L156 182M182 186L166 212M204 210L188 240M204 210L210 246M298 186L324 182M298 186L314 212M276 210L292 240M276 210L270 246" stroke-width="2" opacity=".8"/>
-  </g>
-  <circle cx="240" cy="96" r="5" fill="#fff" stroke="#12326b" stroke-width="2"/>
+  <!-- compare (minus) badge -->
+  <circle cx="106" cy="180" r="14" fill="#fff" stroke="#e3e8f0" stroke-width="1.5"/>
+  <path d="M99 180h14" stroke="#12326b" stroke-width="3" stroke-linecap="round"/>
 
-  <!-- scan line & region of interest -->
-  <rect x="58" y="214" width="364" height="2.5" fill="url(#scan)"/>
-  <g stroke="#2f7de1" stroke-width="2" fill="none">
-    <path d="M318 214h-8v-8M318 262h-8v8M378 214h8v-8M378 262h8v8"/>
+  <!-- healthy twin (bottom): smooth, idealized CT, dashed outline -->
+  <g transform="translate(48 210) scale(.72)">
+    <use href="#ctBase"/>
+    <g clip-path="url(#lungClip)"><rect width="160" height="150" fill="#2f7de1" opacity=".14"/></g>
+    <g fill="none" stroke="#5a9cf0" stroke-width="2.6" stroke-dasharray="6 5" stroke-linecap="round">
+      <use href="#lobeL"/><use href="#lobeR"/>
+    </g>
   </g>
-  <path d="M386 206L404 190" stroke="#2f7de1" stroke-width="1.5"/>
-  <g transform="translate(392 166)">
-    <rect width="72" height="26" rx="13" fill="#fff" stroke="#e3e8f0"/>
-    <circle cx="14" cy="13" r="4" fill="#2f7de1"/>
-    <rect x="24" y="10" width="36" height="6" rx="3" fill="#12326b" opacity=".3"/>
-  </g>
+  <!-- ML sparkle on twin -->
+  <path d="M164 206l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#2f7de1" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
 
-  <!-- legend -->
-  <g transform="translate(36 28)">
-    <rect width="128" height="34" rx="10" fill="#fff" stroke="#e3e8f0"/>
-    <rect x="12" y="13" width="104" height="8" rx="4" fill="url(#scale)"/>
+  <!-- arrow -->
+  <path d="M192 180h30" stroke="#2f7de1" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M217 173l8 7-8 7" fill="none" stroke="#2f7de1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- deviation map: colour overlay on CT -->
+  <g transform="translate(250 96) scale(1.2)">
+    <rect x="-14" y="-14" width="188" height="172" rx="14" fill="#fff" stroke="#e3e8f0" stroke-width=".9"/>
+    <use href="#ctBase"/>
+    <g clip-path="url(#lungClip)">
+      <g filter="url(#soft)">
+        <path d="M20 104C28 96 46 98 54 106C58 116 50 124 38 124C24 124 14 114 20 104Z" fill="url(#hyper)"/>
+        <path d="M108 44C114 36 130 38 134 48C136 58 128 64 118 62C108 60 104 52 108 44Z" fill="url(#hyper)"/>
+        <path d="M22 42C30 34 48 36 54 46C58 56 48 64 36 64C24 64 16 52 22 42Z" fill="#050d1e"/>
+        <path d="M110 92C118 88 132 94 134 106C136 118 128 126 118 124C108 120 104 100 110 92Z" fill="#050d1e"/>
+      </g>
+      <g fill="none" stroke="#bcd3f5" stroke-width="1.4" stroke-dasharray="3 3">
+        <path d="M22 42C30 34 48 36 54 46C58 56 48 64 36 64C24 64 16 52 22 42Z"/><path d="M110 92C118 88 132 94 134 106C136 118 128 126 118 124C108 120 104 100 110 92Z"/>
+      </g>
+    </g>
+    <g fill="none" stroke="#dbe7f8" stroke-width="1.6" opacity=".6">
+      <use href="#lobeL"/><use href="#lobeR"/>
+    </g>
+  </g>
+  <!-- badges: + hyper, - hypo -->
+  <g stroke-width="2.4" stroke-linecap="round">
+    <circle cx="317" cy="216" r="10" fill="#2f7de1" stroke="#fff" stroke-width="2"/><path d="M312 216h10M317 211v10" stroke="#fff"/>
+    <circle cx="413" cy="141" r="10" fill="#2f7de1" stroke="#fff" stroke-width="2"/><path d="M408 141h10M413 136v10" stroke="#fff"/>
+    <circle cx="317" cy="139" r="10" fill="#fff" stroke="#12326b" stroke-width="2"/><path d="M312 139h10" stroke="#12326b"/>
+    <circle cx="413" cy="201" r="10" fill="#fff" stroke="#12326b" stroke-width="2"/><path d="M408 201h10" stroke="#12326b"/>
+  </g>
   </g>
 </svg>
