@@ -42,7 +42,7 @@ window.PUBLICATIONS = [
     links: { abstract: "10.1093/ajrccm/aamag286.134" }
   },
   {
-    title: "SCOPE-FE: Structured Control of Operator and Pairwise Exploration for Feature Engineering",
+    title: "SCOPE-FE: Structured Control of Operator and Pairwise Exploration for Feature Engineering via Quality-Aware Candidate-Space Reduction",
     authors: ["Minhee Park", "Seongyeon Son", "Yonghyun Lee", "Eunchan Kim"],
     venue: "arXiv preprint arXiv:2604.27025",
     year: 2026,
@@ -130,7 +130,7 @@ window.PUBLICATIONS = [
     links: { doi: "10.5626/KTCP.2020.26.11.493" }
   },
   {
-    title: "관계형 데이터베이스 상에서 사용하는 최단 경로 탐색 알고리즘 (ALT) 설계와 구현",
+    title: "관계형 데이터베이스 상에서 사용하는 최단 경로 탐색 알고리즘(ALT) 설계와 구현",
     authors: ["이용현", "임동혁", "구해모", "김형주"],
     venue: "정보과학회 컴퓨팅의 실제 논문지, 25(4), 215",
     year: 2019,
