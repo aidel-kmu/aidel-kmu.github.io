@@ -85,7 +85,7 @@ window.PUBLICATIONS = [
     venue: "American Thoracic Society (ATS) 2024 International Conference — Am J Respir Crit Care Med 209, A1243",
     year: 2024,
     type: "intl-conf",
-    links: { doi: "10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
+    links: { paper: "https://www.ovid.com/10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
   },
   {
     title: "Machine Learning-based Prediction of Relative Regional Air Volume Change from Healthy Human Lung CTs",
@@ -110,7 +110,7 @@ window.PUBLICATIONS = [
     venue: "American Thoracic Society (ATS) 2023 International Conference — Am J Respir Crit Care Med 207, A4004",
     year: 2023,
     type: "intl-conf",
-    links: { doi: "10.1164/ajrccm-conference.2023.207.1_MeetingAbstracts.A4004" }
+    links: { paper: "https://academic.oup.com/ajrccm/article/207/Supplement_1/A4004/8546957" }
   },
   {
     title: "Machine Learning-based Prediction of Relative Regional Air Volume Change",
@@ -134,5 +134,13 @@ window.PUBLICATIONS = [
     year: 2019,
     type: "dom-journal",
     links: { doi: "10.5626/KTCP.2019.25.4.215" }
+  },
+  {
+    title: "오토인코더를 활용한 효율적인 신용카드 사기 탐지 지도 기법",
+    authors: ["이용현", "구해모", "김형주"],
+    venue: "정보과학회 컴퓨팅의 실제 논문지, 25(1), 1",
+    year: 2019,
+    type: "dom-journal",
+    links: { doi: "10.5626/KTCP.2019.25.1.1" }
   }
 ];

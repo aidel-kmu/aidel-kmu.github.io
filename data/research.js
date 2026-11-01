@@ -19,8 +19,8 @@ window.RESEARCH = [
     id: "qct-lung",
     title: { ko: "QCT-AI 기반 국소 폐 이상 분석", en: "QCT-AI based Local Lung Abnormality Analysis" },
     summary: {
-      ko: "정량적 컴퓨터 단층촬영(QCT)은 폐의 구조와 기능을 정밀하게 보여줍니다. 저희는 QCT에서 추출한 영상 바이오마커와 딥러닝을 결합하여 국소 폐 기능과 기도·폐실질의 이상을 분석합니다. 이를 바탕으로 만성폐쇄성폐질환(COPD), 천식 등 만성 폐질환의 특성 파악, 하위 유형 분류, 진행 예측을 연구합니다.",
-      en: "Quantitative computed tomography (QCT) captures lung structure and function in remarkable detail. We combine QCT-derived imaging biomarkers with deep learning to analyze regional lung function and airway and parenchymal abnormalities. This helps characterize, subtype, and predict the progression of chronic lung diseases such as COPD and asthma."
+      ko: "정량적 컴퓨터 단층촬영(QCT)은 흡기·호기 CT로부터 폐의 국소 환기, 변형, 움직임과 기도 구조를 정밀하게 측정합니다. 하지만 건강한 폐에서도 국소 기능은 위치에 따라 달라 측정값만으로는 어느 부위가 비정상인지 판단하기 어렵습니다. 저희는 건강인 CT로 학습한 기계학습 모델로 환자의 폐가 건강했다면 보였을 국소 기능을 예측하는 '정상 기준 디지털 트윈 폐'를 만들고, 실제 QCT와 비교해 기능이 과도하거나(hyper) 저하된(hypo) 국소 영역을 찾아냅니다. 이를 통해 만성폐쇄성폐질환(COPD), 천식 등 만성 폐질환의 기류 제한을 설명하고, 조기 선별과 진행 예측을 연구합니다.",
+      en: "Quantitative CT (QCT) measures regional ventilation, deformation, motion, and airway structure from inspiratory and expiratory scans. Yet even in healthy lungs, regional function varies with location, so a raw measurement alone cannot tell which region is abnormal. We build a healthy-reference digital twin lung — a machine-learning model trained on healthy CTs that predicts the function each region of a patient's lung would have if it were healthy — and compare it against the patient's actual QCT to locate hyper- and hypo-functioning regions. This helps explain airflow obstruction and supports early screening and progression prediction in chronic lung diseases such as COPD and asthma."
     },
     keywords: ["Quantitative CT", "Medical Imaging AI", "Local Regional Lung Function", "COPD", "Asthma", "Digital Twin"],
     image: "assets/img/research/lung-qct.svg"
