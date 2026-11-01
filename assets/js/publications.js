@@ -17,9 +17,11 @@
   TYPES.forEach(function (t) { TYPE_LABEL[t.key] = t.label; });
 
   var PI_NAMES = ["yonghyun lee", "y lee", "yh lee", "y. lee", "y.h. lee", "y. h. lee", "이용현"];
+  // `doi` and `abstract` take either a bare DOI ("10.xxxx/...") or a full URL.
   var LINKS = [
     { key: "paper", label: "Paper" },
-    { key: "doi", label: "DOI" },
+    { key: "doi", label: "Paper" },
+    { key: "abstract", label: "Abstract" },
     { key: "code", label: "Code" },
     { key: "project", label: "Project" }
   ];
@@ -46,7 +48,7 @@
   }
 
   function linkUrl(key, v) {
-    if (key === "doi" && !/^https?:/i.test(v)) return "https://doi.org/" + v;
+    if ((key === "doi" || key === "abstract") && !/^https?:/i.test(v)) return "https://doi.org/" + v;
     return v;
   }
 

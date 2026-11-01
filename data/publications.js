@@ -9,7 +9,9 @@
 //   equal   : (선택) 공동 제1저자 등 동등 기여 저자의 authors 배열 인덱스(0부터). 예: equal: [0, 1]
 //             → 해당 이름 뒤에 * 가 붙고 "* These authors contributed equally." 안내 문구가 자동으로 표시됩니다.
 //   note    : (선택) 항목 아래에 표시할 짧은 안내 문구(문자열). equal 과 함께 쓰면 기본 문구 대신 이 문구가 표시됩니다.
-//   links   : (선택) { paper, doi, code, project } — 있는 것만 적으면 해당 버튼이 표시됩니다. doi 는 "10.xxxx/..." 형태.
+//   links   : (선택) { paper, doi, abstract, code, project } — 있는 것만 적으면 해당 버튼이 표시됩니다.
+//             doi 는 "10.xxxx/..." 형태이며 "Paper" 버튼으로 표시됩니다(paper 에는 URL).
+//             abstract 는 학회 초록용으로 "Abstract" 버튼이 표시됩니다(DOI 또는 URL).
 // 예시:
 // { title: "Paper Title", authors: ["Yonghyun Lee", "Gildong Hong"], venue: "KCC 2026", year: 2026, type: "dom-conf",
 //   links: { paper: "https://...", code: "https://github.com/..." } },
@@ -37,7 +39,7 @@ window.PUBLICATIONS = [
     venue: "American Thoracic Society (ATS) 2026 International Conference — Am J Respir Crit Care Med 212",
     year: 2026,
     type: "intl-conf",
-    links: { doi: "10.1093/ajrccm/aamag286.134" }
+    links: { abstract: "10.1093/ajrccm/aamag286.134" }
   },
   {
     title: "SCOPE-FE: Structured Control of Operator and Pairwise Exploration for Feature Engineering",
@@ -61,7 +63,7 @@ window.PUBLICATIONS = [
     venue: "American Thoracic Society (ATS) 2025 International Conference — Am J Respir Crit Care Med 211, A3370",
     year: 2025,
     type: "intl-conf",
-    links: { doi: "10.1164/ajrccm.2025.211.Abstracts.A3370" }
+    links: { abstract: "10.1164/ajrccm.2025.211.Abstracts.A3370" }
   },
   {
     title: "Deep Learning-based Delinquent Taxpayer Prediction: A Scientific Administrative Approach",
@@ -85,7 +87,7 @@ window.PUBLICATIONS = [
     venue: "American Thoracic Society (ATS) 2024 International Conference — Am J Respir Crit Care Med 209, A1243",
     year: 2024,
     type: "intl-conf",
-    links: { paper: "https://www.ovid.com/10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
+    links: { abstract: "https://www.ovid.com/10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
   },
   {
     title: "Machine Learning-based Prediction of Relative Regional Air Volume Change from Healthy Human Lung CTs",
@@ -110,7 +112,7 @@ window.PUBLICATIONS = [
     venue: "American Thoracic Society (ATS) 2023 International Conference — Am J Respir Crit Care Med 207, A4004",
     year: 2023,
     type: "intl-conf",
-    links: { paper: "https://academic.oup.com/ajrccm/article/207/Supplement_1/A4004/8546957" }
+    links: { abstract: "https://academic.oup.com/ajrccm/article/207/Supplement_1/A4004/8546957" }
   },
   {
     title: "Machine Learning-based Prediction of Relative Regional Air Volume Change",
