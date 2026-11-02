@@ -94,7 +94,7 @@
 .research-head .more-link { margin-bottom: 32px; }
 
 .carousel { outline: none; }
-.carousel-viewport { overflow: hidden; border-radius: calc(var(--radius) + 4px); }
+.carousel-viewport { overflow: hidden; border-radius: calc(var(--radius) + 4px); transition: height .4s ease; }
 .carousel-track { display: flex; transition: transform .6s cubic-bezier(.22, .61, .36, 1); }
 @media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
 .slide {
@@ -146,11 +146,11 @@
 .join-text p { color: var(--text-soft); margin: 0 0 12px; max-width: 680px; }
 .join-text .join-note { margin: 0; font-weight: 600; color: var(--primary-2); }
 .join-action { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.join-email { font-size: 14px; color: var(--text-faint); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .news-grid { grid-template-columns: 1fr; gap: 16px; }
+  .carousel-track { align-items: flex-start; }
   .slide { grid-template-columns: 1fr; }
   .slide-media { padding: 20px 20px 0; background: #fff; }
   .slide-media img { max-width: 440px; border-radius: 14px; }

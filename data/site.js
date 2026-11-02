@@ -11,7 +11,7 @@ window.SITE = {
   },
   address: {
     ko: "[42601] 대구광역시 달서구 달구벌대로 1095 계명대학교 성서캠퍼스 공학1호관 1331호",
-    en: "Room 1331, Engineering Building 1, Keimyung University, 1095 Dalgubeol-daero, Dalseo-gu, Daegu 42601, Republic of Korea"
+    en: "Room 1331, Engineering Building 1, Keimyung University Seongseo Campus, 1095 Dalgubeol-daero, Dalseo-gu, Daegu 42601, Republic of Korea"
   },
   email: "yhlee@kmu.ac.kr",
   links: {

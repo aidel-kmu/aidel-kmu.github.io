@@ -62,13 +62,13 @@
           '<span class="brand-text"><span class="brand-name">' + escapeHtml(site.shortName || "AIDEL") + '</span>' +
           '<span class="brand-sub" data-site="affiliation"></span></span>' +
         '</a>' +
-        '<nav class="nav" id="site-nav" aria-label="Main">' + links + '</nav>' +
+        '<nav class="nav" id="site-nav" aria-label="Main" data-aria-ko="주 메뉴" data-aria-en="Main">' + links + '</nav>' +
         '<div class="header-right">' +
-          '<div class="lang-toggle" role="group" aria-label="Language">' +
-            '<button type="button" data-lang="ko">KO</button>' +
-            '<button type="button" data-lang="en">EN</button>' +
+          '<div class="lang-toggle" role="group" aria-label="Language" data-aria-ko="언어" data-aria-en="Language">' +
+            '<button type="button" data-lang="ko" aria-label="한국어">KO</button>' +
+            '<button type="button" data-lang="en" aria-label="English">EN</button>' +
           '</div>' +
-          '<button class="menu-btn" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false"><span></span></button>' +
+          '<button class="menu-btn" type="button" aria-label="Menu" data-aria-ko="메뉴" data-aria-en="Menu" aria-controls="site-nav" aria-expanded="false"><span></span></button>' +
         '</div>' +
       '</div>';
 
@@ -115,6 +115,11 @@
     document.querySelectorAll("[data-ko],[data-en]").forEach(function (n) {
       var v = n.getAttribute("data-" + lang);
       if (v != null) n.textContent = v;
+    });
+    // Bilingual aria-labels: <button data-aria-ko="..." data-aria-en="...">
+    document.querySelectorAll("[data-aria-ko],[data-aria-en]").forEach(function (n) {
+      var v = n.getAttribute("data-aria-" + lang);
+      if (v != null) n.setAttribute("aria-label", v);
     });
     document.querySelectorAll(".lang-toggle button").forEach(function (b) {
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");

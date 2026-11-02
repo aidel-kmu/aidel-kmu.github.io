@@ -19,7 +19,7 @@
     }
     el.innerHTML = items.map(function (n) {
       return '<li class="news-item">' +
-        '<time class="news-date">' + esc(n.date) + "</time>" +
+        '<time class="news-date" datetime="' + esc(String(n.date).replace(/\./g, "-")) + '">' + esc(n.date) + "</time>" +
         '<div class="news-main">' +
           (n.tag ? '<span class="tag">' + esc(A.t(n.tag)) + "</span>" : "") +
           '<p class="news-title">' + esc(A.t(n.title)) + "</p>" +
@@ -41,7 +41,7 @@
   var STATS = [
     { value: countPubs, label: "Research Works", href: "publications.html" },
     { value: countMembers, label: "Current Members", href: "members.html" },
-    { value: function () { return 2026; }, label: "Founded at KMU", fixed: true }
+    { value: function () { return 2026; }, label: "Established at KMU", fixed: true }
   ];
   var statsCounted = false;
 
@@ -130,6 +130,7 @@
     if (instant) track.style.transition = "none";
     track.style.transform = "translateX(" + (-100 * current) + "%)";
     if (instant) { track.offsetWidth; track.style.transition = ""; }
+    fitHeight();
     track.querySelectorAll(".slide").forEach(function (s, k) {
       s.setAttribute("aria-hidden", k === current ? "false" : "true");
       if ("inert" in s) s.inert = k !== current;
@@ -139,6 +140,13 @@
     });
     var pos = document.getElementById("research-pos");
     if (pos) pos.textContent = (current + 1) + " / " + n;
+  }
+
+  // On narrow screens slides keep their own height; size the viewport to the visible one.
+  function fitHeight() {
+    var track = document.getElementById("research-track");
+    var s = track && track.children[current];
+    if (s) track.parentNode.style.height = s.offsetHeight + "px";
   }
 
   function restartTimer() {
@@ -190,6 +198,8 @@
       sx = null;
     }, { passive: true });
 
+    window.addEventListener("resize", fitHeight);
+    window.addEventListener("load", fitHeight);
     restartTimer();
   }
 
@@ -200,8 +210,6 @@
     if (!a) return;
     if (!email) { a.hidden = true; return; }
     a.href = "mailto:" + email;
-    var addr = document.getElementById("join-email-text");
-    if (addr) addr.textContent = email;
   }
 
   function render() {

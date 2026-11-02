@@ -18,7 +18,7 @@
 }
 .pub-filter.active .pub-filter-n { background: rgba(255, 255, 255, .2); color: #fff; }
 
-.pub-search-wrap { position: relative; flex: 0 1 280px; min-width: 0; }
+.pub-search-wrap { position: relative; flex: 1 1 240px; max-width: 100%; min-width: 0; }
 .pub-search-wrap svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text-faint); pointer-events: none; }
 .pub-search {
   width: 100%; font: inherit; font-size: 14.5px; padding: 9px 14px 9px 38px; border-radius: 999px;
@@ -35,7 +35,6 @@
   position: sticky; top: calc(var(--header-h) + 20px); align-self: start; display: flex; flex-direction: column; gap: 2px;
 }
 .pub-year-n { font-size: 13px; font-weight: 600; color: var(--text-faint); letter-spacing: 0; }
-html[lang="ko"] 
 .pub-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .pub-item {
   padding: 18px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff;

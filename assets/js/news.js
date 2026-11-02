@@ -32,7 +32,7 @@
             '<span class="tl-dot" aria-hidden="true"></span>' +
             '<div class="tl-card">' +
               '<div class="tl-meta">' +
-                '<time class="tl-date">' + esc(n.date) + "</time>" +
+                '<time class="tl-date" datetime="' + esc(String(n.date).replace(/\./g, "-")) + '">' + esc(n.date) + "</time>" +
                 (n.tag ? '<span class="tag">' + esc(A.t(n.tag)) + "</span>" : "") +
               "</div>" +
               '<h3 class="tl-title">' + esc(A.t(n.title)) + "</h3>" +

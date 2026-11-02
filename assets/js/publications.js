@@ -115,7 +115,7 @@
       var items = byYear[y].sort(function (a, b) { return a.i - b.i; });
       return '<section class="pub-year">' +
         '<h2 class="pub-year-title"><span>' + esc(y) + '</span><span class="pub-year-n">' +
-          (A.lang === "ko" ? items.length + "편" : items.length + (items.length === 1 ? " paper" : " papers")) + '</span></h2>' +
+          (A.lang === "ko" ? items.length + "편" : items.length + (items.length === 1 ? " publication" : " publications")) + '</span></h2>' +
         '<ol class="pub-items">' + items.map(function (x) {
           var p = x.p;
           return '<li class="pub-item">' +

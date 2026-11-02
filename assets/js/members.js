@@ -15,7 +15,11 @@
     plus: '<path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
   };
   var LINK_ORDER = ["email", "homepage", "scholar", "github", "linkedin"];
-  var LINK_LABEL = { email: "Email", homepage: "Homepage", scholar: "Google Scholar", github: "GitHub", linkedin: "LinkedIn" };
+  var LINK_LABEL = {
+    email: { ko: "이메일", en: "Email" }, homepage: { ko: "홈페이지", en: "Homepage" },
+    scholar: "Google Scholar", github: "GitHub", linkedin: "LinkedIn"
+  };
+  var rendered = false;
 
   function icon(name) {
     return '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">' + ICONS[name] + '</svg>';
@@ -27,13 +31,14 @@
       var url = k === "email" ? (m.email ? "mailto:" + m.email : "") : links[k];
       if (!url) return "";
       var ext = k === "email" ? "" : ' target="_blank" rel="noopener"';
-      return '<a class="m-icon" href="' + esc(url) + '"' + ext + ' aria-label="' + LINK_LABEL[k] + '" title="' + LINK_LABEL[k] + '">' + icon(k) + '</a>';
+      var label = esc(A.t(LINK_LABEL[k]));
+      return '<a class="m-icon" href="' + esc(url) + '"' + ext + ' aria-label="' + label + '" title="' + label + '">' + icon(k) + '</a>';
     }).join("");
     return html ? '<div class="m-links">' + html + '</div>' : "";
   }
 
   function photo(m, cls) {
-    return '<img class="' + cls + '" src="' + esc(m.photo || PLACEHOLDER) + '" alt="' + esc(A.t(m.name)) + '" loading="lazy" ' +
+    return '<img class="' + cls + '" src="' + esc(m.photo || PLACEHOLDER) + '" alt="" loading="lazy" ' +
       'onerror="this.onerror=null;this.src=\'' + PLACEHOLDER + '\'">';
   }
 
@@ -115,6 +120,9 @@
       '</section>';
     }).join("");
 
+    // Re-renders (language toggle) show cards at once instead of fading them in again.
+    if (rendered) root.querySelectorAll(".reveal").forEach(function (n) { n.classList.add("in"); });
+    rendered = true;
     A.observeReveal(root);
   }
 

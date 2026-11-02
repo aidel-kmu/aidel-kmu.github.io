@@ -54,21 +54,21 @@ window.MEMBERS = [
   {
     group: "undergrad",
     name: { ko: "이소민", en: "Somin Lee" },
-    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
+    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
     photo: "assets/img/members/placeholder.svg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   },
   {
     group: "undergrad",
     name: { ko: "김보슬", en: "Boseul Kim" },
-    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
+    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
     photo: "assets/img/members/placeholder.svg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   },
   {
     group: "undergrad",
     name: { ko: "장윤영", en: "Yunyoung Jang" },
-    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
+    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
     photo: "assets/img/members/placeholder.svg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   }

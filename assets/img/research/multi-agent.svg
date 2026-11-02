@@ -31,7 +31,7 @@
   <g fill="none" stroke="#2f7de1" stroke-width="2.4" stroke-linecap="round">
     <path d="M280.7 98.6A100 100 0 0 1 339.5 200.5" marker-end="url(#arr)"/>
     <path d="M298.8 270.9A100 100 0 0 1 181.2 270.9" marker-end="url(#arr)"/>
-    <path d="M140.5 200.5A100 100 0 0 1 199.3 98.6" marker-end="url(#arr)"/>
+    <path d="M140.5 200.5A100 100 0 0 1 202.7 97.2" marker-end="url(#arr)"/>
   </g>
 
   <!-- message bubbles on the loop -->
@@ -98,7 +98,7 @@
     <rect x="12" y="46" width="38" height="5" rx="2.5" fill="#12326b" fill-opacity=".22"/>
     <path d="M66 10l1.8 4.2 4.2 1.8-4.2 1.8-1.8 4.2-1.8-4.2-4.2-1.8 4.2-1.8z" fill="#2f7de1"/>
   </g>
-  <path d="M114 90H196" fill="none" stroke="#12326b" stroke-opacity=".55" stroke-width="2" stroke-linecap="round" marker-end="url(#arrN)"/>
+  <path d="M114 76H205" fill="none" stroke="#12326b" stroke-opacity=".55" stroke-width="2" stroke-linecap="round" marker-end="url(#arrN)"/>
 
   <!-- result output (right) -->
   <path d="M361 240H384" fill="none" stroke="#12326b" stroke-opacity=".55" stroke-width="2" stroke-linecap="round" marker-end="url(#arrN)"/>
