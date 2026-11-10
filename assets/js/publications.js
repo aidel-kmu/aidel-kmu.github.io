@@ -6,15 +6,17 @@
   var A = window.AIDEL;
   var esc = A.escapeHtml;
 
+  // Filter chips and the within-year sort both follow this order.
   var TYPES = [
+    { key: "intl-conf", label: "International Conference Paper" },
     { key: "intl-journal", label: "International Journal" },
-    { key: "intl-conf", label: "International Conference" },
+    { key: "intl-presentation", label: "International Conference Presentation" },
     { key: "dom-journal", label: "Domestic Journal" },
     { key: "dom-conf", label: "Domestic Conference" },
     { key: "preprint", label: "Preprint", optional: true }
   ];
-  var TYPE_LABEL = {};
-  TYPES.forEach(function (t) { TYPE_LABEL[t.key] = t.label; });
+  var TYPE_LABEL = {}, TYPE_RANK = {};
+  TYPES.forEach(function (t, i) { TYPE_LABEL[t.key] = t.label; TYPE_RANK[t.key] = i; });
 
   var PI_NAMES = ["yonghyun lee", "y lee", "yh lee", "y. lee", "y.h. lee", "y. h. lee", "이용현"];
   // `doi` and `abstract` take either a bare DOI ("10.xxxx/...") or a full URL.
@@ -112,7 +114,12 @@
     var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
 
     root.innerHTML = years.map(function (y) {
-      var items = byYear[y].sort(function (a, b) { return a.i - b.i; });
+      var items = byYear[y].sort(function (a, b) {
+        var ra = TYPE_RANK[a.p.type], rb = TYPE_RANK[b.p.type];
+        if (ra === undefined) ra = TYPES.length;
+        if (rb === undefined) rb = TYPES.length;
+        return ra - rb || a.i - b.i;
+      });
       return '<section class="pub-year">' +
         '<h2 class="pub-year-title"><span>' + esc(y) + '</span><span class="pub-year-n">' +
           (A.lang === "ko" ? items.length + "편" : items.length + (items.length === 1 ? " publication" : " publications")) + '</span></h2>' +

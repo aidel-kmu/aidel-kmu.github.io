@@ -1,11 +1,12 @@
 // 논문 목록 (Google Scholar 기준, 2026-10 정리).
-// 새 논문을 추가하려면 아래 배열에 객체 하나를 추가하세요. 순서는 상관없습니다(연도별로 자동 정렬, 같은 연도 안에서는 이 파일의 순서를 따릅니다).
+// 새 논문을 추가하려면 아래 배열에 객체 하나를 추가하세요. 순서는 상관없습니다(연도별·종류별로 자동 정렬됩니다).
 //   title   : 논문 제목 (원문 그대로)
 //   authors : 저자 문자열 배열. 교수님 이름("Yonghyun Lee", "Y Lee", "이용현" 등)은 자동으로 강조됩니다.
 //   venue   : 학술지/학회명과 권(호), 페이지 등
 //   year    : 출판 연도 (숫자)
-//   type    : "intl-journal"(국제 학술지) | "intl-conf"(국제 학술대회) | "dom-journal"(국내 학술지)
-//             | "dom-conf"(국내 학술대회) | "preprint"(프리프린트)
+//   type    : "intl-conf"(국제 학술대회 논문) | "intl-journal"(국제 학술지) | "intl-presentation"(국제 학술대회 발표, 예: ATS)
+//             | "dom-journal"(국내 학술지) | "dom-conf"(국내 학술대회) | "preprint"(프리프린트)
+//             → 같은 연도 안에서는 이 순서대로 정렬되고, 같은 종류끼리는 이 파일의 순서를 따릅니다.
 //   equal   : (선택) 공동 제1저자 등 동등 기여 저자의 authors 배열 인덱스(0부터). 예: equal: [0, 1]
 //             → 해당 이름 뒤에 * 가 붙고 "* These authors contributed equally." 안내 문구가 자동으로 표시됩니다.
 //   note    : (선택) 항목 아래에 표시할 짧은 안내 문구(문자열). equal 과 함께 쓰면 기본 문구 대신 이 문구가 표시됩니다.
@@ -38,7 +39,7 @@ window.PUBLICATIONS = [
     authors: ["Yonghyun Lee", "Jiwoong Choi", "Asma Abdolijomoor", "Mario Castro", "ChangHoon Lee", "SoRi Kim", "Youngchan Jang", "Eunchan Kim", "KumJu Chae", "Changhyun Lee"],
     venue: "American Thoracic Society (ATS) 2026 International Conference — Am J Respir Crit Care Med 212",
     year: 2026,
-    type: "intl-conf",
+    type: "intl-presentation",
     links: { abstract: "10.1093/ajrccm/aamag286.134" }
   },
   {
@@ -48,6 +49,20 @@ window.PUBLICATIONS = [
     year: 2026,
     type: "preprint",
     links: { doi: "10.48550/arXiv.2604.27025" }
+  },
+  {
+    title: "날씨 특화 파인튜닝에 따른 Faster R-CNN의 교차 도메인 차량 탐지 성능 분석",
+    authors: ["이소민", "김보슬", "장윤영", "이용현"],
+    venue: "대한전자공학회 2026년도 추계학술대회 (학부생 논문경진대회, 포스터 발표) — Accepted",
+    year: 2026,
+    type: "dom-conf"
+  },
+  {
+    title: "합성 강우 학습과 입력 해상도 변화에 따른 YOLOv8 차량 탐지 강건성 분석",
+    authors: ["김보슬", "이소민", "장윤영", "이용현"],
+    venue: "대한전자공학회 2026년도 추계학술대회 (학부생 논문경진대회, 포스터 발표) — Accepted",
+    year: 2026,
+    type: "dom-conf"
   },
   {
     title: "Primary Determinants and Strategic Implications for Customer Loyalty in Pet-Related Vertical E-Commerce: A Machine Learning Approach",
@@ -62,7 +77,7 @@ window.PUBLICATIONS = [
     authors: ["Yonghyun Lee", "Jiwoong Choi", "Eunchan Kim", "KumJu Chae", "SoRi Kim", "Changhyun Lee"],
     venue: "American Thoracic Society (ATS) 2025 International Conference — Am J Respir Crit Care Med 211, A3370",
     year: 2025,
-    type: "intl-conf",
+    type: "intl-presentation",
     links: { abstract: "10.1164/ajrccm.2025.211.Abstracts.A3370" }
   },
   {
@@ -86,7 +101,7 @@ window.PUBLICATIONS = [
     authors: ["Yonghyun Lee", "Eunchan Kim", "KumJu Chae", "Changhyun Lee", "GongYong Jin", "SoRi Kim", "Jiwoong Choi"],
     venue: "American Thoracic Society (ATS) 2024 International Conference — Am J Respir Crit Care Med 209, A1243",
     year: 2024,
-    type: "intl-conf",
+    type: "intl-presentation",
     links: { abstract: "https://www.ovid.com/10.1164/ajrccm-conference.2024.209.1_MeetingAbstracts.A1243" }
   },
   {
@@ -111,7 +126,7 @@ window.PUBLICATIONS = [
     authors: ["Yonghyun Lee", "Eunchan Kim", "KumJu Chae", "Changhyun Lee", "GongYong Jin", "SoRi Kim", "Jiwoong Choi"],
     venue: "American Thoracic Society (ATS) 2023 International Conference — Am J Respir Crit Care Med 207, A4004",
     year: 2023,
-    type: "intl-conf",
+    type: "intl-presentation",
     links: { abstract: "https://academic.oup.com/ajrccm/article/207/Supplement_1/A4004/8546957" }
   },
   {
@@ -119,7 +134,8 @@ window.PUBLICATIONS = [
     authors: ["Yonghyun Lee", "Eunchan Kim", "Jiwoong Choi", "KumJu Chae", "Changhyun Lee"],
     venue: "Asia Pacific International Conference on Information Science and Technology (APIC-IST 2022)",
     year: 2022,
-    type: "intl-conf"
+    type: "intl-conf",
+    note: "Best Paper Award"
   },
   {
     title: "음악 유사도 비교를 위한 Siamese 네트워크 기반 그래프 임베딩의 개선",

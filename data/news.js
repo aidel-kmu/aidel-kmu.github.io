@@ -12,6 +12,18 @@
 //   },
 window.NEWS = [
   {
+    date: "2026.11",
+    tag: { ko: "논문", en: "Paper" },
+    title: {
+      ko: "학부연구생 논문 2편, 대한전자공학회 추계학술대회 학부생 논문경진대회 포스터 발표 확정",
+      en: "Two undergraduate papers accepted for poster presentation at the IEIE Fall Conference 2026 Undergraduate Paper Competition"
+    },
+    body: {
+      ko: "학부연구생 이소민, 김보슬, 장윤영 학생의 논문 2편이 대한전자공학회 2026년도 추계학술대회(2026.11.27–28, 곤지암리조트) 학부생 논문경진대회에서 포스터 발표로 확정되었습니다. 축하합니다!",
+      en: "Two papers by undergraduate research interns Somin Lee, Boseul Kim, and Yunyeong Jang were accepted for poster presentation in the Undergraduate Paper Competition track of the IEIE Fall Conference 2026 (Nov 27–28, Gonjiam Resort). Congratulations!"
+    }
+  },
+  {
     date: "2026.07",
     tag: { ko: "구성원", en: "Members" },
     title: {

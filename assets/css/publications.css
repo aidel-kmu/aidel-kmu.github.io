@@ -45,6 +45,7 @@
 .pub-type { font-size: 11.5px; letter-spacing: .01em; }
 .pub-type-intl-journal { background: #e3ecfb; color: #12326b; }
 .pub-type-intl-conf { background: #e2f3f1; color: #0f6157; }
+.pub-type-intl-presentation { background: #e6f2fa; color: #1d5878; }
 .pub-type-dom-journal { background: #f1eafb; color: #5a2d91; }
 .pub-type-dom-conf { background: #fcefe3; color: #8a4b0f; }
 .pub-type-preprint { background: #eef1f5; color: #4a5566; }
