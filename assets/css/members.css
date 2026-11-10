@@ -19,7 +19,7 @@
 .pi-card { display: flex; gap: 28px; padding: 26px 28px; align-items: center; }
 .pi-profile { flex: 0 0 220px; }
 .pi-photo {
-  display: block; width: 160px; height: 192px; object-fit: cover; border-radius: 12px;
+  display: block; width: 220px; height: 264px; object-fit: cover; border-radius: 12px;
   background: var(--bg-muted); border: 1px solid var(--line);
 }
 .pi-info { margin-top: 16px; }
@@ -47,7 +47,7 @@
 .m-icon:hover { color: #fff; background: var(--primary); border-color: var(--primary); transform: translateY(-1px); }
 
 /* Member grid */
-.m-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.m-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 220px)); gap: 24px; }
 .m-card { display: flex; flex-direction: column; overflow: hidden; height: 100%; }
 .m-card:hover { transform: translateY(-2px); }
 .m-photo-wrap { aspect-ratio: 1 / 1; background: var(--bg-muted); overflow: hidden; }
@@ -84,7 +84,7 @@ a.m-placeholder:hover { border-color: var(--accent); color: var(--text); box-sha
 @media (max-width: 720px) {
   .pi-card { padding: 22px; }
   .pi-profile { gap: 18px; }
-  .pi-photo { width: 96px; height: 115px; }
+  .pi-photo { width: 110px; height: 132px; }
   .pi-name { font-size: 22px; }
   .pi-name-sub { font-size: 14px; }
   .pi-role { font-size: 13.5px; }
@@ -92,8 +92,11 @@ a.m-placeholder:hover { border-color: var(--accent); color: var(--text); box-sha
   .pi-tl li + li { margin-top: 4px; }
 }
 @media (max-width: 520px) {
-  .m-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .m-body { padding: 12px 12px 14px; }
+  /* 한 줄에 한 명: 사진(96px, 지도교수 사진보다 작게) 왼쪽 + 정보 오른쪽 */
+  .m-grid { grid-template-columns: 1fr; gap: 12px; }
+  .m-card:not(.m-placeholder) { flex-direction: row; align-items: center; }
+  .m-photo-wrap { flex: 0 0 96px; width: 96px; margin: 12px 0 12px 12px; border-radius: 10px; }
+  .m-body { padding: 12px 14px; }
   .m-name { font-size: 16px; }
   .m-role, .m-interests { font-size: 12.5px; }
   .m-placeholder { grid-column: 1 / -1; min-height: 220px; }

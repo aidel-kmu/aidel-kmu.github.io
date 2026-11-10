@@ -16,7 +16,7 @@ window.NEWS = [
     tag: { ko: "구성원", en: "Members" },
     title: {
       ko: "이소민, 김보슬, 장윤영 학생이 학부연구생으로 AIDEL에 합류했습니다.",
-      en: "Somin Lee, Boseul Kim, and Yunyoung Jang joined AIDEL as undergraduate research interns."
+      en: "Somin Lee, Boseul Kim, and Yunyeong Jang joined AIDEL as undergraduate research interns."
     },
     body: {
       ko: "새로운 구성원들을 환영합니다!",

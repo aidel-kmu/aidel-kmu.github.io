@@ -35,7 +35,7 @@ window.MEMBERS = [
       en: ["Assistant Professor", "Dept. of Computer Engineering,", "Keimyung University"]
     },
     email: "yhlee@kmu.ac.kr",
-    photo: "assets/img/members/placeholder.svg",
+    photo: "assets/img/members/yonghyun-lee.jpg",
     // 경력·학력은 한/영 화면 모두 영어로 표시합니다. [연도, 내용] 형태이며 최신 순으로 적습니다.
     career: [
       ["2026–Present", "Assistant Professor, Dept. of Computer Engineering, Keimyung University"],
@@ -55,21 +55,21 @@ window.MEMBERS = [
     group: "undergrad",
     name: { ko: "이소민", en: "Somin Lee" },
     role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
-    photo: "assets/img/members/placeholder.svg",
+    photo: "assets/img/members/somin-lee.jpg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   },
   {
     group: "undergrad",
     name: { ko: "김보슬", en: "Boseul Kim" },
     role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
-    photo: "assets/img/members/placeholder.svg",
+    photo: "assets/img/members/boseul-kim.jpg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   },
   {
     group: "undergrad",
-    name: { ko: "장윤영", en: "Yunyoung Jang" },
+    name: { ko: "장윤영", en: "Yunyeong Jang" },
     role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
-    photo: "assets/img/members/placeholder.svg",
+    photo: "assets/img/members/yunyeong-jang.jpg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   }
 ];
