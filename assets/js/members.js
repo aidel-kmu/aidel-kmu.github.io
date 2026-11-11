@@ -70,6 +70,22 @@
     '</article>';
   }
 
+  // Extra PI sections below the PI card (Awards & Honors); English-only like Career/Education.
+  function piExtras(pis) {
+    return pis.map(function (m) {
+      if (!m.awards || !m.awards.length) return "";
+      return '<section class="m-section">' +
+        '<div class="m-section-head"><h2>Awards &amp; Honors</h2></div>' +
+        '<article class="card pi-extra reveal"><div class="pi-tl"><ul>' +
+          m.awards.map(function (r) {
+            var text = r[2] ? '<a href="' + esc(r[2]) + '" target="_blank" rel="noopener">' + esc(r[1]) + ' ↗</a>' : esc(r[1]);
+            return '<li><span class="pi-yr">' + esc(r[0]) + '</span><span>' + text + '</span></li>';
+          }).join("") +
+        '</ul></div></article>' +
+      '</section>';
+    }).join("");
+  }
+
   function memberCard(m) {
     var interests = A.t(m.interests);
     return '<article class="card m-card reveal">' +
@@ -106,6 +122,10 @@
       { key: "alumni", title: { ko: "졸업생", en: "Alumni" } }
     ];
 
+    // professor.html shows the PI group, students.html everything else.
+    var isProf = document.body.getAttribute("data-page") === "professor";
+    groups = groups.filter(function (g) { return (g.key === "pi") === isProf; });
+
     root.innerHTML = groups.map(function (g) {
       var list = members.filter(function (m) { return m.group === g.key; });
       var showPh = !list.length && g.placeholder && g.key !== "alumni";
@@ -118,7 +138,7 @@
           (list.length && g.key !== "pi" ? '<span class="m-count">' + list.length + '</span>' : "") + '</div>' +
         body +
       '</section>';
-    }).join("");
+    }).join("") + (isProf ? piExtras(members.filter(function (m) { return m.group === "pi"; })) : "");
 
     // Re-renders (language toggle) show cards at once instead of fading them in again.
     if (rendered) root.querySelectorAll(".reveal").forEach(function (n) { n.classList.add("in"); });

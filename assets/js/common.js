@@ -39,7 +39,10 @@
 
   var NAV = [
     { key: "home", href: "index.html" },
-    { key: "members", href: "members.html" },
+    { key: "people", sub: [
+      { key: "professor", href: "professor.html" },
+      { key: "students", href: "students.html" }
+    ] },
     { key: "publications", href: "publications.html" },
     { key: "news", href: "news.html" }
   ];
@@ -49,9 +52,17 @@
     if (!el) return;
     var site = window.SITE || {};
     var page = document.body.getAttribute("data-page");
-    var links = NAV.map(function (n) {
+    function navLink(n) {
       return '<a href="' + n.href + '"' + (n.key === page ? ' class="active" aria-current="page"' : "") +
         ' data-i18n="nav.' + n.key + '"></a>';
+    }
+    var links = NAV.map(function (n) {
+      if (!n.sub) return navLink(n);
+      // A group (People) only opens its menu when clicked; its items are the actual pages.
+      var here = n.sub.some(function (s) { return s.key === page; });
+      return '<div class="nav-item">' +
+        '<button type="button" class="nav-toggle' + (here ? " active" : "") + '" aria-expanded="false" data-i18n="nav.' + n.key + '"></button>' +
+        '<div class="nav-sub">' + n.sub.map(navLink).join("") + '</div></div>';
     }).join("");
     el.className = "site-header";
     el.innerHTML =
@@ -81,6 +92,25 @@
       var open = nav.classList.toggle("open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
+
+    var items = el.querySelectorAll(".nav-item");
+    function closeSubs(except) {
+      items.forEach(function (it) {
+        if (it === except) return;
+        it.classList.remove("open");
+        it.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
+      });
+    }
+    items.forEach(function (it) {
+      var t = it.querySelector(".nav-toggle");
+      t.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeSubs(it);
+        t.setAttribute("aria-expanded", it.classList.toggle("open") ? "true" : "false");
+      });
+    });
+    document.addEventListener("click", function (e) { if (!el.contains(e.target)) closeSubs(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSubs(); });
   }
 
   function renderFooter() {
@@ -97,7 +127,8 @@
             '<div data-site="address"></div>' +
           '</div>' +
           '<div class="footer-links">' +
-            NAV.map(function (n) { return '<a href="' + n.href + '" data-i18n="nav.' + n.key + '"></a>'; }).join("") +
+            NAV.reduce(function (all, n) { return all.concat(n.sub || [n]); }, [])
+              .map(function (n) { return '<a href="' + n.href + '" data-i18n="nav.' + n.key + '"></a>'; }).join("") +
             (site.links && site.links.scholar ? '<a href="' + site.links.scholar + '" target="_blank" rel="noopener">Google Scholar ↗</a>' : "") +
           '</div>' +
         '</div>' +

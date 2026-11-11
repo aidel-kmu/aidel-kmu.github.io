@@ -7,7 +7,7 @@
 //   email     : (선택) 이메일
 //   interests : (선택) { ko, en } 관심 연구 분야
 //   bio       : (선택) { ko, en } 짧은 소개
-//   career, education : (선택, 지도교수용) [["연도", "내용"], ...] — 영어로만 적습니다.
+//   career, education, awards : (선택, 지도교수용) [["연도", "내용"], ...] — 영어로만 적습니다.
 //   links     : (선택) { homepage, scholar, github, linkedin } — 있는 것만 적으면 아이콘이 표시됩니다.
 // 석사과정(ms)에 실제 구성원을 추가하면 "합류 예정" 안내 카드는 자동으로 사라집니다.
 // 졸업생은 group 을 "alumni" 로 바꾸고 role 에 졸업 정보(예: "석사 2028 → ○○전자")를 적으면 됩니다.
@@ -47,6 +47,12 @@ window.MEMBERS = [
       ["2025", "Ph.D. in Computer Science and Engineering (Integrated M.S.–Ph.D.), Seoul National University"],
       ["2015", "B.S. in Computer Engineering, Sungkyunkwan University"]
     ],
+    // 수상·영예(Awards & Honors): 지도교수 페이지에 별도 칸으로 표시됩니다. 형식은 경력과 같습니다.
+    // 세 번째 값(선택)에 URL을 적으면 내용에 링크가 걸립니다.
+    awards: [
+      ["2026", "Early Career Professional Highlight, American Thoracic Society (ATS), Respiratory Structure and Function (RSF) Assembly", "https://site.thoracic.org/assemblies/rsf/ecp-highlights"],
+      ["2022", "Best Paper Award, Asia Pacific International Conference on Information Science and Technology (APIC-IST 2022)"]
+    ],
     links: {
       scholar: "https://scholar.google.com/citations?user=bUV0eBcAAAAJ"
     }
@@ -54,21 +60,21 @@ window.MEMBERS = [
   {
     group: "undergrad",
     name: { ko: "이소민", en: "Somin Lee" },
-    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
+    role: { ko: "학부연구생 · 2026.04 –", en: "Undergraduate Research Intern · Apr. 2026 –" },
     photo: "assets/img/members/somin-lee.jpg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   },
   {
     group: "undergrad",
     name: { ko: "김보슬", en: "Boseul Kim" },
-    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
+    role: { ko: "학부연구생 · 2026.04 –", en: "Undergraduate Research Intern · Apr. 2026 –" },
     photo: "assets/img/members/boseul-kim.jpg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   },
   {
     group: "undergrad",
     name: { ko: "장윤영", en: "Yunyeong Jang" },
-    role: { ko: "학부연구생 · 2026.07 –", en: "Undergraduate Research Intern · Jul. 2026 –" },
+    role: { ko: "학부연구생 · 2026.04 –", en: "Undergraduate Research Intern · Apr. 2026 –" },
     photo: "assets/img/members/yunyeong-jang.jpg",
     interests: { ko: "기계학습, 데이터 분석", en: "Machine Learning, Data Analysis" }
   }

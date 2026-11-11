@@ -2,7 +2,9 @@
 window.I18N = {
   ko: {
     "nav.home": "Home",
-    "nav.members": "Members",
+    "nav.people": "People",
+    "nav.professor": "Professor",
+    "nav.students": "Students",
     "nav.publications": "Publications",
     "nav.news": "News",
     "skip": "본문 바로가기",
@@ -11,7 +13,9 @@ window.I18N = {
   },
   en: {
     "nav.home": "Home",
-    "nav.members": "Members",
+    "nav.people": "People",
+    "nav.professor": "Professor",
+    "nav.students": "Students",
     "nav.publications": "Publications",
     "nav.news": "News",
     "skip": "Skip to main content",

@@ -67,12 +67,27 @@ h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .5em; color: var(--text); letter
 @media (max-width: 480px) { .brand-sub { display: none; } }
 
 .nav { display: flex; align-items: center; gap: 4px; }
-.nav a {
+.nav a, .nav-toggle {
   padding: 8px 14px; border-radius: 999px; color: var(--text-soft); font-weight: 600; font-size: 15px;
   transition: background .15s, color .15s;
 }
-.nav a:hover { background: var(--bg-muted); color: var(--primary); }
-.nav a.active { color: var(--primary); background: var(--accent-soft); }
+.nav a:hover, .nav-toggle:hover { background: var(--bg-muted); color: var(--primary); }
+.nav a.active, .nav-toggle.active { color: var(--primary); background: var(--accent-soft); }
+.nav-toggle { display: inline-flex; align-items: center; gap: 6px; border: 0; background: none; font-family: inherit; line-height: inherit; cursor: pointer; }
+.nav-toggle::after {
+  content: ""; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.8px 1.8px 0;
+  transform: translateY(-2px) rotate(45deg); transition: transform .15s;
+}
+.nav-item.open .nav-toggle::after { transform: translateY(1px) rotate(-135deg); }
+.nav-item { position: relative; }
+.nav-sub {
+  position: absolute; top: 100%; left: 50%; transform: translate(-50%, 4px); margin-top: 6px; min-width: 150px;
+  display: flex; flex-direction: column; gap: 2px; padding: 6px; background: #fff;
+  border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow);
+  opacity: 0; visibility: hidden; transition: opacity .15s, transform .15s, visibility .15s;
+}
+.nav-item.open .nav-sub { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.nav .nav-sub a { border-radius: 8px; padding: 8px 12px; font-size: 14.5px; white-space: nowrap; }
 
 .header-right { display: flex; align-items: center; gap: 8px; }
 .lang-toggle {
@@ -104,6 +119,14 @@ h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .5em; color: var(--text); letter
   }
   .nav.open { display: flex; }
   .nav a { border-radius: 10px; padding: 12px 14px; }
+  .nav-item { display: flex; flex-direction: column; }
+  .nav-toggle { border-radius: 10px; padding: 12px 14px; justify-content: space-between; text-align: left; }
+  .nav-sub {
+    position: static; transform: none; margin: 0; padding: 0 0 4px 16px; min-width: 0;
+    border: 0; box-shadow: none; background: none; display: none; opacity: 1; visibility: visible; transition: none;
+  }
+  .nav-item.open .nav-sub { display: flex; transform: none; }
+  .nav .nav-sub a { padding: 10px 14px; font-size: 14px; }
 }
 
 /* ---------- Page header (sub pages) ---------- */

@@ -40,7 +40,7 @@
   // fixed: true → shown as-is without the count-up animation (e.g. a year).
   var STATS = [
     { value: countPubs, label: "Research Works", href: "publications.html" },
-    { value: countMembers, label: "Current Members", href: "members.html" },
+    { value: countMembers, label: "Current Members", href: "students.html" },
     { value: function () { return 2026; }, label: "Established at KMU", fixed: true }
   ];
   var statsCounted = false;
